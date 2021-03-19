@@ -15,7 +15,7 @@ ans=random.randint(1,101)
 print("嗨",name,"請輸入1-100整數猜數:")
 
 guess=int(input())
-while guesstimes in range(5):
+while guesstimes in range(4):
     print("繼續猜")
 
     if guess>ans:
@@ -26,10 +26,10 @@ while guesstimes in range(5):
 
     if guess<ans:
         print("猜大一點")
-        print("嗨",name,"請輸入",guess,"-",guess,"的整數")
+        print("嗨",name,"請輸入",guess,"-100的整數")
         guess=int(input())
         guesstimes+=1
-        break
+    
     if guess==ans:
         break
     
