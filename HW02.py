@@ -1,35 +1,70 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Mar 14 13:13:31 2021
+Created on Sun Mar 21 22:38:03 2021
 
 @author: user
 """
 
+import random
+data = []
+while len(data) != 7 :
+    n = random.randint(1,100)
+    if ((data.count(n)==0) or (data.count(n)!=0)):
+        data.append(n)
+    else:
+        break
 
-a=int(input("請使用者輸入整數範圍:"))
+data.sort()
+print(data)
 
-for b in list(range(1,a+1)):
-    if b%4==0:
-        print(b,"是4的倍數")
-
-#僅限找尋1-100內質數
-for b in range(1,a+1):
-    if b==1:
-        continue  
-    if b==2:
-        print(b,"是質數")
-    for i in range(2,b):    
-        if (b==3 or b==5 or b==7):
-             print(b,"是質數")
-             break
-        if (b%3==0 or b%5==0 or b%7==0):
-             break
-        if b%i!=0:
-            print(b,"是質數")
+y=int(input("請使用者輸入串列中其一數字:")) 
+while True:
+    if y>data[3]:
+        del data[:3]
+        print(data)
+        if y>data[1]:
+            del data[:1]
+            print(data)
+            if y>data[1]:
+                del data[:1]
+                print(data)
+                if y>data[0]:
+                    del data[0]
+                    print(data)
+                    break
+               
+            elif y==data[1]:
+                print(data[1])
+                break
+           
+                
+    if y<data[3]:
+        del data[3:]
+        print(data)
+        if y<data[1]:
+            del data[1:]
+            print(data)
             break
-        if b%i==0:
-            break  
+        elif y==data[1]:
+            print (data[1])
+            break
+        else: 
+            y>data[1]
+            del data[:1]
+            print(data)
             
-print("程式執行完畢")
+            if y>data[0]:
+                del data[0]
+                print(data)
+                break
+    if y==data[3]:
+        print(data[3])
+        break
+      
+
+print("程式執行結束")    
+            
 
 
+
+        
